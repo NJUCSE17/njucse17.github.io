@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="problem solving">
+  <meta name="keyword" content>
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      2017 问题求解一 期末考试 | NJUCSE17
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>NJUCSE17</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>2017 问题求解一 期末考试</h2>
+  <p class="post-date">2018-01-05
+    
+	  by Fancy
+    
+  </p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p>关于字符串的读入：（以下<code>c</code>表示字符，<code>s</code>表示字符串）<br>1、读入一个字符：<code>getchar(c);</code> <code>scanf(&quot;%c&quot;, &amp;c);</code><br>2、读入一个字符（跳过空格和回车）：<code>cin&gt;&gt;c;</code><br>（注：如果读入字符前后已知有空格，比如第一题里的操作符，那么可以<code>scanf(&quot;%s&quot;, s);</code> 然后用<code>s[0]</code><br>3、读入一串字符（到空格和回车停止）：<code>cin&gt;&gt;s;</code> <code>scanf(&quot;%s&quot;, s);</code><br>4、读入一行字符（到回车停止）：<code>gets(s);</code> <code>cin.getline(s, 1005, &#39;\n&#39;);</code> <code>fgets(s, 1005, stdin);</code><br>（注：读入一行字符串时，需要先把上一行（如果有读入数字啥的）结尾的换行符吃掉。可以直接先读一行或者<code>while(c!=&#39;\n&#39;) c=getchar();</code><br>（注：<code>gets()</code>由于缓冲区溢出漏洞，被c11废除<br>（注：<code>fgets()</code>会把回车也读进去<br>　<br>（注：Windows里的换行符是<code>&#39;\n&#39;</code>，OS X里的换行符是<code>&#39;\r&#39;</code>，Linux里是<code>&#39;\n&#39;</code>和<code>&#39;\r&#39;</code><br>（当然你愿意特判的话也可以全部<code>getchar()</code>  </p>
+<h1 id="1360-Problem-A-项链"><a href="#1360-Problem-A-项链" class="headerlink" title="1360 Problem A 项链"></a><a href="http://114.212.10.47:8084/problem.php?id=1360" target="_blank" rel="noopener">1360 Problem A 项链</a></h1><blockquote>
+<p>MJ很喜欢用彩色珠子做的项链。他制作项链包括以下两个基本操作：<br>A i C：在位置 i 插入颜色为 C ( 颜色用大写字母表示 ) 的珠子；<br>D i： 去掉在位置 i 的珠子；<br>S i j：交换位置 i,j 的珠子 ( i,j 可能相同，大小关系任意 ) ；<br>P：查看当前项链状态；<br>例如，下面操作序列将得到项链“BA”<br>A 0 A<br>A 0 B<br>再继续执行下列操作之后，将得到项链“CDA”<br>D 0<br>A 0 C<br>A 1 D<br>在执行下列操作，最终得到项链“ADC”<br>S 0 2  </p>
+</blockquote>
+<p>暴力，插入和删除就把后面的全都移一位<br>　<br>时间复杂度：<br>插入、删除、打印：O(n)<br>交换：O(1)<br>　<br>我考场上用的是vector，理论时间复杂度一样<br>　<br>log复杂度大概可以平衡树（手动滑稽</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> T, n, a[<span class="number">3005</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Add</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> pos;</span><br><span class="line">	<span class="keyword">char</span> val[<span class="number">5</span>];</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%s"</span>, &amp;pos, val);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = n++; i &gt; pos; i--)</span><br><span class="line">		a[i] = a[i - <span class="number">1</span>];</span><br><span class="line">	a[pos] = val[<span class="number">0</span>] - <span class="string">'A'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Delete</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> pos;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;pos);</span><br><span class="line">	n--;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = pos; i &lt; n; i++)</span><br><span class="line">		a[i] = a[i + <span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Swap</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x, y;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y);</span><br><span class="line">	<span class="built_in">std</span>::swap(a[x], a[y]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%c"</span>, a[i] + <span class="string">'A'</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T); T; T--) &#123;</span><br><span class="line">		<span class="keyword">char</span> opt[<span class="number">5</span>];</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%s"</span>, opt);</span><br><span class="line">		<span class="keyword">if</span> (opt[<span class="number">0</span>] == <span class="string">'A'</span>) Add();</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (opt[<span class="number">0</span>] == <span class="string">'D'</span>) Delete();</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (opt[<span class="number">0</span>] == <span class="string">'S'</span>) Swap();</span><br><span class="line">		<span class="keyword">else</span> Print();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> T;</span><br><span class="line">	<span class="keyword">for</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T); T; T--) &#123;</span><br><span class="line">		<span class="keyword">int</span> x, y;</span><br><span class="line">		<span class="keyword">char</span> opt[<span class="number">5</span>], z[<span class="number">5</span>];</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%s"</span>, opt);</span><br><span class="line">		<span class="keyword">if</span> (opt[<span class="number">0</span>] == <span class="string">'A'</span>) &#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d%s"</span>, &amp;x, z);</span><br><span class="line">			a.insert(a.begin() + x, z[<span class="number">0</span>] - <span class="string">'A'</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (opt[<span class="number">0</span>] == <span class="string">'D'</span>) &#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</span><br><span class="line">			a.erase(a.begin() + x);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (opt[<span class="number">0</span>] == <span class="string">'S'</span>) &#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y);</span><br><span class="line">			<span class="built_in">std</span>::swap(a[x], a[y]);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator iter = a.begin(); iter != a.end(); iter++)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%c"</span>, *iter + <span class="string">'A'</span>);</span><br><span class="line">			<span class="comment">//for(int i = 0; i &lt; a.size(); i++) printf("%c", a[i] + 'A'); //和上两行的作用一样</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="1361-Problem-B-括号匹配"><a href="#1361-Problem-B-括号匹配" class="headerlink" title="1361 Problem B 括号匹配"></a><a href="http://114.212.10.47:8084/problem.php?id=1361" target="_blank" rel="noopener">1361 Problem B 括号匹配</a></h1><blockquote>
+<p>判断给定字符串中的括号是否匹配。匹配输出1，否则输出0。<br>每个字符串最多含有 ‘(‘, ‘[‘, ‘{‘, ‘)’, ‘]’, ‘}’ 六种不同字符。<br>规定空字符串是”括号匹配的”。</p>
+</blockquote>
+<p>因为最后忘了判断栈是否为空WA了两发，身败名裂<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> T, n, top, <span class="built_in">stack</span>[<span class="number">1005</span>], a[<span class="number">200</span>];</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">1005</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">DoIt</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	gets(s);</span><br><span class="line">	n = <span class="built_in">strlen</span>(s);</span><br><span class="line">	top = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">		<span class="keyword">int</span> x = a[s[i]];</span><br><span class="line">		<span class="keyword">if</span>(!x) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">if</span>(x &amp; <span class="number">1</span>) <span class="built_in">stack</span>[++top] = x;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(top &amp;&amp; x - <span class="built_in">stack</span>[top] == <span class="number">1</span>) top--;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> !top;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	a[<span class="string">'('</span>] = <span class="number">1</span>; a[<span class="string">')'</span>] = <span class="number">2</span>;</span><br><span class="line">	a[<span class="string">'['</span>] = <span class="number">3</span>; a[<span class="string">']'</span>] = <span class="number">4</span>;</span><br><span class="line">	a[<span class="string">'&#123;'</span>] = <span class="number">5</span>; a[<span class="string">'&#125;'</span>] = <span class="number">6</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T), gets(s); T; T--)  <span class="comment">//这个gets为了把第一行的换行符吃掉</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, DoIt());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="1347-Problem-C-“相邻”积"><a href="#1347-Problem-C-“相邻”积" class="headerlink" title="1347 Problem C “相邻”积"></a><a href="http://114.212.10.47:8084/problem.php?id=1347" target="_blank" rel="noopener">1347 Problem C “相邻”积</a></h1><blockquote>
+<p>现有一N行M列的正整数数阵A，找出A中相邻且按同一方向排列（在同一直线上）的4个数，使得它们的乘积K最大。“相邻”定义为：一个数在另一个数的上、下、左、右或对角线的最近位置。<br>比如A为：<br><strong>90</strong>  24  26  33<br>12  <strong>37</strong>  38   1<br>57  28  <strong>91</strong>  42<br>23  11  15  <strong>25</strong><br>主对角线上的4个数相乘可以得到最大积7575750。  </p>
+</blockquote>
+<p>暴力枚举每一个点的每一种方向<br>其中八个方向可以简化为四个，因为从左到右和从右到左是一样的<br>O(n^2*16)<br>　<br>当然常数可以变成4，就是按每个方向扫一遍<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> n, m, ans, a[<span class="number">1005</span>][<span class="number">1005</span>], X[]=&#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>&#125;, Y[]=&#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">-1</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][j]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> t = <span class="number">1</span>; t &lt;= <span class="number">4</span>; t++) &#123;  <span class="comment">//枚举方向</span></span><br><span class="line">				<span class="keyword">int</span> tot = <span class="number">1</span>, x = i, y = j;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= <span class="number">4</span>; k++, x += X[t], y += Y[t]) &#123;  <span class="comment">//X和Y数组为方向向量</span></span><br><span class="line">					<span class="keyword">if</span>(x &lt; <span class="number">1</span> || x &gt; n || y &lt; <span class="number">1</span> || y &gt; m) <span class="keyword">break</span>;</span><br><span class="line">					tot *= a[x][y];</span><br><span class="line">				&#125;</span><br><span class="line">				ans = <span class="built_in">std</span>::max(ans, tot);</span><br><span class="line">			&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="1362-Problem-D-冒泡排序"><a href="#1362-Problem-D-冒泡排序" class="headerlink" title="1362 Problem D 冒泡排序"></a><a href="http://114.212.10.47:8084/problem.php?id=1362" target="_blank" rel="noopener">1362 Problem D 冒泡排序</a></h1><blockquote>
+<p>请你实现冒泡算法，要求利用递归来替换该算法的外层循环<br>注意从后往前排</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> n, a[<span class="number">1001</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dfs</span><span class="params">(<span class="keyword">int</span> st)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(st == n) <span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = n; i &gt; st; i--)</span><br><span class="line">		<span class="keyword">if</span>(a[i] &gt; a[i - <span class="number">1</span>]) <span class="built_in">std</span>::swap(a[i], a[i - <span class="number">1</span>]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>, a[i]);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> Dfs(st + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">	Dfs(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></section>
+	
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#编程" >
+    <span class="tag-code">编程</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+	
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/17.12.12/">
+        <span class="nav-arrow">← </span>
+        
+          “计科竞赛一览”主题团生
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/18.01.18/">
+        
+          算法题常见错误汇总
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+	
+	<!-- Comment Valine START -->
+    
+      <div id="comment" style="margin-top:25px;"></div>
+      <script>
+        new Valine({
+        el: '#comment' ,
+        notify: false, // 邮件提醒
+        verify: false, // 验证码
+        appId: 'zIl1N3bcpby3Wj0isWv6oOAm-MdYXbMMI',
+        appKey: 'ufcL3CIfmHs59BjxrloEyXQe',
+        placeholder: 'ヾﾉ≧∀≦)o 来啊, 快活啊!',
+        path: window.location.pathname, 
+        avatar: 'mm'
+      });
+      </script>
+    
+	<!-- Comment Valine END -->
+	
+  </article>
+  <!-- Article END -->
+  
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#1360-Problem-A-项链"><span class="toc-nav-text">1360 Problem A 项链</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#1361-Problem-B-括号匹配"><span class="toc-nav-text">1361 Problem B 括号匹配</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#1347-Problem-C-“相邻”积"><span class="toc-nav-text">1347 Problem C “相邻”积</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#1362-Problem-D-冒泡排序"><span class="toc-nav-text">1362 Problem D 冒泡排序</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+  
+</main>
+
+<script>
+  (function () {
+    var url = '/18.01.04/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "2017 问题求解一 期末考试",
+        owner: "",
+        repo: "",
+        oauth: {
+          client_id: "",
+          client_secret: ""
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+	<br>
+	Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="problem solving">
+  <meta name="keyword" content>
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      LaTeX使用说明 | NJUCSE17
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>NJUCSE17</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>LaTeX使用说明</h2>
+  <p class="post-date">2017-09-20
+    
+  </p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="LaTeX介绍及教程"><a href="#LaTeX介绍及教程" class="headerlink" title="LaTeX介绍及教程"></a>LaTeX介绍及教程</h1><p>1、<a href="https://www.latex-project.org" target="_blank" rel="noopener">LaTeX官网</a><br>2、<a href="https://zh.wikibooks.org/zh-cn/LaTeX" target="_blank" rel="noopener">LaTeX / Wikibooks</a><br>3、<a href="https://liam0205.me/2014/09/08/latex-introduction" target="_blank" rel="noopener">一份其实很短的 LaTeX 入门文档</a>  </p>
+<h1 id="魏老师的推荐"><a href="#魏老师的推荐" class="headerlink" title="魏老师的推荐"></a>魏老师的推荐</h1><p>1、<a href="/attachment/hw-latex-template-new.zip">LaTeX模板下载</a>&amp;<a href="https://www.sharelatex.com/project/59c28b3df4fa18367c0ddd11" target="_blank" rel="noopener">在线版模板</a><br>经测试，写字板打开时，中文显示出现乱码问题。所以，请用专用的 TeX 编辑工具。如果使用 Vim，请配置编码选项 (set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1)，不用的可忽略。<br>　<br>插播一条信息：稍作修改，在 hw.tex 中添加了注释（主要关于 xelatex）。<br>　<br>如果要用latex写伪代码，可选择使用<a href="https://tex.stackexchange.com/q/229355/23098" target="_blank" rel="noopener">这些packages</a>。我一般使用algorithmicx。<br>　<br>参考资料，给出引用就可以，比如是什么书，什么网址，什么论文，谁写的，等等概要信息。必要的代码都可以放到作业文档里。<br>　<br>2、编辑器推荐：<br>（1）推荐一个在线LaTeX编辑器（考验学校网速的时候到了）：<a href="https://cn.sharelatex.com/" target="_blank" rel="noopener">ShareLaTeX</a><br>（2）windows系统：<a href="https://www.tug.org/texlive/acquire.html" target="_blank" rel="noopener">texlive 2017</a> 在紫荆上可以下载，安装自带 WinEdt 编辑器。<br>（3）Ubuntu 系统：推荐使用 vim-latex （也叫 latexsuite）<br>（4）<a href="https://github.com/scottkosty/install-tl-ubuntu" target="_blank" rel="noopener">Ubuntu 系统安装 texlive</a>   （一键安装，但可能耗时较长，睡前执行，一觉醒来就可以用了。）<br>（5）<a href="https://tex.stackexchange.com/questions/339/latex-editors-ides" target="_blank" rel="noopener">其他编辑器</a>  </p>
+<h1 id="作业相关"><a href="#作业相关" class="headerlink" title="作业相关"></a>作业相关</h1><p>1、<a href="http://cslabcms.nju.edu.cn/problem_solving/index.php/2017%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%B8%80%E5%AD%A6%E6%9C%9F)" target="_blank" rel="noopener">作业内容</a><br>2、<a href="http://cslabcms.nju.edu.cn/" target="_blank" rel="noopener">作业提交平台</a></p>
+</section>
+	
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#学习" >
+    <span class="tag-code">学习</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+	
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/17.09.18/">
+        <span class="nav-arrow">← </span>
+        
+          新生见面会信息整理
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/17.09.24/">
+        
+          干部名单公示
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+	
+	<!-- Comment Valine START -->
+    
+      <div id="comment" style="margin-top:25px;"></div>
+      <script>
+        new Valine({
+        el: '#comment' ,
+        notify: false, // 邮件提醒
+        verify: false, // 验证码
+        appId: 'zIl1N3bcpby3Wj0isWv6oOAm-MdYXbMMI',
+        appKey: 'ufcL3CIfmHs59BjxrloEyXQe',
+        placeholder: 'ヾﾉ≧∀≦)o 来啊, 快活啊!',
+        path: window.location.pathname, 
+        avatar: 'mm'
+      });
+      </script>
+    
+	<!-- Comment Valine END -->
+	
+  </article>
+  <!-- Article END -->
+  
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#LaTeX介绍及教程"><span class="toc-nav-text">LaTeX介绍及教程</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#魏老师的推荐"><span class="toc-nav-text">魏老师的推荐</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#作业相关"><span class="toc-nav-text">作业相关</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+  
+</main>
+
+<script>
+  (function () {
+    var url = '/17.09.20/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "LaTeX使用说明",
+        owner: "",
+        repo: "",
+        oauth: {
+          client_id: "",
+          client_secret: ""
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+	<br>
+	Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

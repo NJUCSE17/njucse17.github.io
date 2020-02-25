@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="problem solving">
+  <meta name="keyword" content>
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      问题求解三 机试 非官方题解 | NJUCSE17
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>NJUCSE17</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>问题求解三 机试 非官方题解</h2>
+  <p class="post-date">2019-01-11
+    
+	  by Fancy
+    
+  </p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p>OJ 题意全靠猜。<br>数据范围全靠猜。<br>重边自环全靠猜。<br>有向无向全靠猜。<br>输入结束全靠猜。<br>错别字意全靠猜。<br><del>那要不要猜一猜考试成绩呢。</del></p>
+<h1 id="Problem-A"><a href="#Problem-A" class="headerlink" title="Problem A"></a>Problem A</h1><blockquote>
+<p>判断输入 parent-child 关系是否构成一棵树。要求使用并查集。</p>
+</blockquote>
+<p>搜到了<a href="https://blog.csdn.net/cxllyg/article/details/8225835" target="_blank" rel="noopener">原题</a>。算法是：</p>
+<blockquote>
+<p>Step 1：对每对输入的根节点标记表示这些节点出现过，进行并操作。并操作时两个节点不能有相同的根节点否则将构成环；假设b节点要接到a上，则要保证b节点是一个根节点，否则若进行并操作，b将会有两个父节点；若无以上情况，则可以合并两棵树。<br>Step 2：每组数据输入结束后，要计算整个图中的根节点总数，若根节点总数不为1，则构成的图不是一棵树。<br>Step 3：根据以上判断就可以输出结果了，每组结果输出后要初始化数据。</p>
+</blockquote>
+<p>无法理解为什么要用并查集，明明找个入度为 0 的点搜索一下就 O(n) 了。<br>而且这个解法无法处理重边，题面也没说有没有重边自环，否则也不应该出现编号为 0 的点。<br>　<br>代码请看上面原题链接。</p>
+<h1 id="Problem-B"><a href="#Problem-B" class="headerlink" title="Problem B"></a>Problem B</h1><blockquote>
+<p>给一个无向图，问是否存在从 Alice 家到 Bob 家再到学校的结点不重复的路径。</p>
+</blockquote>
+<p>每个点拆点，流量为 1。源点流向 Bob 家，流量为 2。Alice 家和学校流向汇点，流量为 1。</p>
+<p>判断最大流是否为 2。</p>
+<p><del>现场默写 dinic，居然写对了。</del></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">420</span>, M = N * N * <span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> n, m, ecnt, ds[N], head[N], S, T;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; Q;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span> &#123;</span></span><br><span class="line">  <span class="keyword">int</span> to, rest, next;</span><br><span class="line">&#125; E[M];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Addedge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">  E[++ecnt] = (edge) &#123;y, r, head[x]&#125;;</span><br><span class="line">  head[x] = ecnt;</span><br><span class="line">  E[++ecnt] = (edge) &#123;x, <span class="number">0</span>, head[y]&#125;;</span><br><span class="line">  head[y] = ecnt;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Bfs</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">memset</span>(ds, <span class="number">0</span>, <span class="keyword">sizeof</span>(ds));</span><br><span class="line">  ds[S] = <span class="number">1</span>;</span><br><span class="line">  Q.push(S);</span><br><span class="line">  <span class="keyword">while</span> (!Q.empty()) &#123;</span><br><span class="line">    <span class="keyword">int</span> x = Q.front();</span><br><span class="line">    Q.pop();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> e = head[x]; e; e = E[e].next) &#123;</span><br><span class="line">      <span class="keyword">int</span> y = E[e].to;</span><br><span class="line">      <span class="keyword">if</span> (E[e].rest &amp;&amp; !ds[y]) &#123;</span><br><span class="line">        ds[y] = ds[x] + <span class="number">1</span>;</span><br><span class="line">        Q.push(y);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ds[T];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> flow)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (x == T) <span class="keyword">return</span> flow;</span><br><span class="line">  <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> e = head[x]; e; e = E[e].next) &#123;</span><br><span class="line">    <span class="keyword">int</span> y = E[e].to;</span><br><span class="line">    <span class="keyword">if</span> (E[e].rest &amp;&amp; ds[y] == ds[x] + <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">int</span> b = Dfs(y, <span class="built_in">std</span>::min(flow - a, E[e].rest));</span><br><span class="line">      E[e].rest -= b;</span><br><span class="line">      E[e ^ <span class="number">1</span>].rest += b;</span><br><span class="line">      a += b;</span><br><span class="line">      <span class="keyword">if</span> (a == flow) <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (!a) ds[S] = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Dinic</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (Bfs()) ans += Dfs(S, <span class="number">0x7fffffff</span>);</span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> cas;</span><br><span class="line">  <span class="keyword">for</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;cas); cas; --cas) &#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</span><br><span class="line">    S = <span class="number">0</span>;</span><br><span class="line">    T = n * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    ecnt = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">memset</span>(head, <span class="number">0</span>, <span class="keyword">sizeof</span>(head));</span><br><span class="line">    <span class="keyword">int</span> x, y, z;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">      Addedge(i, i + n, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">      <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y);</span><br><span class="line">      Addedge(n + x + <span class="number">1</span>, y + <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">      Addedge(n + y + <span class="number">1</span>, x + <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;x, &amp;y, &amp;z);</span><br><span class="line">    Addedge(S, n + y + <span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">    Addedge(n + x + <span class="number">1</span>, T, <span class="number">1</span>);</span><br><span class="line">    Addedge(n + z + <span class="number">1</span>, T, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (Dinic() == <span class="number">2</span>) <span class="built_in">printf</span>(<span class="string">"Yes\n"</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"No\n"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Problem-C"><a href="#Problem-C" class="headerlink" title="Problem C"></a>Problem C</h1><blockquote>
+<p>给一棵树，每个点有一个权值，若选择一个点则其 parent 不能被选，问权值和最大的方案。</p>
+</blockquote>
+<p>树形 DP，dp[i][0/1] 表示点 i 是否被选时子树的最大值。转移方程：<br>$dp[i][0]=\sum\limits_{child\ j}\max(dp[j][0],dp[j][1]),$</p>
+<p>$dp[i][1]=value[i] + \sum\limits_{child\ j}dp[j][0].$</p>
+<p><del>出题人又不知道树的边数是 n-1 了。</del></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cassert&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">6010</span>;</span><br><span class="line"><span class="keyword">int</span> n, ecnt, root, a[N], du[N], dp[N][<span class="number">2</span>], head[N];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span> &#123;</span></span><br><span class="line">  <span class="keyword">int</span> to, next;</span><br><span class="line">&#125; E[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Addedge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">  E[++ecnt] = (edge) &#123;y, head[x]&#125;;</span><br><span class="line">  head[x] = ecnt;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> pa)</span> </span>&#123;</span><br><span class="line">  dp[x][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">  dp[x][<span class="number">1</span>] = a[x];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> e = head[x]; e; e = E[e].next) &#123;</span><br><span class="line">    <span class="keyword">int</span> y = E[e].to;</span><br><span class="line">    <span class="keyword">if</span> (y == pa) <span class="keyword">continue</span>;</span><br><span class="line">    Dfs(y, x);</span><br><span class="line">    dp[x][<span class="number">0</span>] += <span class="built_in">std</span>::max(dp[y][<span class="number">0</span>], dp[y][<span class="number">1</span>]);</span><br><span class="line">    dp[x][<span class="number">1</span>] += dp[y][<span class="number">0</span>];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, x, y; i &lt; n; ++i) &#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y);</span><br><span class="line">    du[x]++;</span><br><span class="line">    Addedge(y, x);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">    <span class="keyword">if</span> (du[i] == <span class="number">0</span>) &#123;</span><br><span class="line">      assert(root == <span class="number">0</span>);</span><br><span class="line">      root = i;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  Dfs(root, <span class="number">0</span>);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, <span class="built_in">std</span>::max(dp[root][<span class="number">0</span>], dp[root][<span class="number">1</span>]));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Problem-D"><a href="#Problem-D" class="headerlink" title="Problem D"></a>Problem D</h1><blockquote>
+<p>给一个无向图，其中一些点为起点，一些为终点。问任意一对起点终点直接的最短距离。要求使用 Dijkstra。</p>
+</blockquote>
+<p>源点和起点之间连边，代价为 0；终点和汇点之间连边，代价为 0。求 S 到 T 的最短路。<br>或者只建源点，终点判断一下。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;utility&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1005</span>, M = <span class="number">40010</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf = <span class="number">0x7fffffff</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span> &#123;</span></span><br><span class="line">  <span class="keyword">int</span> to, cost, next;</span><br><span class="line">&#125; E[M];</span><br><span class="line"><span class="keyword">int</span> ecnt, n, S, head[N], ds[N];</span><br><span class="line"><span class="built_in">std</span>::priority_queue&lt;<span class="built_in">std</span>::pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; &gt; q;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Addedge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span> </span>&#123;</span><br><span class="line">  E[++ecnt] = (edge) &#123;y, z, head[x]&#125;;</span><br><span class="line">  head[x] = ecnt;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dijkstra</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; ++i) ds[i] = inf;</span><br><span class="line">  q.push(<span class="built_in">std</span>::make_pair(<span class="number">0</span>, S));</span><br><span class="line">  <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">    <span class="built_in">std</span>::pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; x = q.top();</span><br><span class="line">    q.pop();</span><br><span class="line">    <span class="keyword">if</span> (ds[x.second] &lt; inf) <span class="keyword">continue</span>;</span><br><span class="line">    ds[x.second] = -x.first;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> e = head[x.second]; e; e = E[e].next) &#123;</span><br><span class="line">      q.push(<span class="built_in">std</span>::make_pair(x.first - E[e].cost, E[e].to));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> m, n1, n2;</span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;m, &amp;n1, &amp;n2) != EOF) &#123;</span><br><span class="line">    n = <span class="number">1000</span>;</span><br><span class="line">    S = <span class="number">0</span>;</span><br><span class="line">    ecnt = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">memset</span>(head, <span class="number">0</span>, <span class="keyword">sizeof</span>(head));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, x, y, z; i &lt;= m; ++i) &#123;</span><br><span class="line">      <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;x, &amp;y, &amp;z);</span><br><span class="line">      Addedge(x, y, z);</span><br><span class="line">      Addedge(y, x, z);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, x; i &lt;= n1; ++i) &#123;</span><br><span class="line">      <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</span><br><span class="line">      Addedge(S, x, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    Dijkstra();</span><br><span class="line">    <span class="keyword">int</span> ans = inf;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, x; i &lt;= n2; ++i) &#123;</span><br><span class="line">      <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</span><br><span class="line">      ans = <span class="built_in">std</span>::min(ans, ds[x]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></section>
+	
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#编程" >
+    <span class="tag-code">编程</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+	
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/18.11.29/">
+        <span class="nav-arrow">← </span>
+        
+          班级活动参加队列
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/19.03.19/">
+        
+          “知名教授进支部”主题团日总结报告
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+	
+	<!-- Comment Valine START -->
+    
+      <div id="comment" style="margin-top:25px;"></div>
+      <script>
+        new Valine({
+        el: '#comment' ,
+        notify: false, // 邮件提醒
+        verify: false, // 验证码
+        appId: 'zIl1N3bcpby3Wj0isWv6oOAm-MdYXbMMI',
+        appKey: 'ufcL3CIfmHs59BjxrloEyXQe',
+        placeholder: 'ヾﾉ≧∀≦)o 来啊, 快活啊!',
+        path: window.location.pathname, 
+        avatar: 'mm'
+      });
+      </script>
+    
+	<!-- Comment Valine END -->
+	
+  </article>
+  <!-- Article END -->
+  
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Problem-A"><span class="toc-nav-text">Problem A</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Problem-B"><span class="toc-nav-text">Problem B</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Problem-C"><span class="toc-nav-text">Problem C</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Problem-D"><span class="toc-nav-text">Problem D</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+  
+</main>
+
+<script>
+  (function () {
+    var url = '/19.01.11/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "问题求解三 机试 非官方题解",
+        owner: "",
+        repo: "",
+        oauth: {
+          client_id: "",
+          client_secret: ""
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+	<br>
+	Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

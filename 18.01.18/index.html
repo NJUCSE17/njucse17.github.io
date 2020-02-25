@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="problem solving">
+  <meta name="keyword" content>
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      算法题常见错误汇总 | NJUCSE17
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>NJUCSE17</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>算法题常见错误汇总</h2>
+  <p class="post-date">2018-01-18
+    
+	  by Fancy
+    
+  </p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p>持续更新 &amp; 欢迎疯狂评论补充<br>　<br>还可以看知乎问题 <a href="https://www.zhihu.com/question/64013739" target="_blank" rel="noopener">你在做算法题时遇到过哪些蜜汁错误？</a>  </p>
+<h1 id="智障型错误"><a href="#智障型错误" class="headerlink" title="智障型错误"></a>智障型错误</h1><p>1、<code>m</code> 写成 <code>n</code>，<code>i</code> 写成 <code>j</code>，<code>v</code> 写成 <code>w</code>，<code>head</code> 写成 <code>tail</code><br>2、<code>&lt;</code> 写成 <code>&gt;</code>，<code>&lt;=</code> 写成 <code>&lt;</code><br>3、<code>int main()</code> 写成 <code>int mian()</code><br>4、<code>scanf</code> 与 <code>&amp;</code> （一般除了读字符数组都要加 <code>&amp;</code>（这个不加会报 warning<br>5、输出 <code>YES</code> 还是 <code>Yes</code> 还是 <code>yes</code><br>6、有的题目不忽略结尾的空格和回车  </p>
+<h1 id="初学型错误"><a href="#初学型错误" class="headerlink" title="初学型错误"></a>初学型错误</h1><p>1、不写 <code>using namespace std;</code> 还不写 <code>std::</code>（私人建议不要 <code>using namespace std;</code><br>2、忘了赋初始值、忘了清空数组<br>3、数组越界 &amp; <strong>循环边界判断</strong><br>4、如何正确读入字符 &amp; 字符串（参考上一篇题解  </p>
+<h1 id="老司机也会挂"><a href="#老司机也会挂" class="headerlink" title="老司机也会挂"></a>老司机也会挂</h1><p>1、数组开小 or 开爆 （char &amp; bool : 1 byte，int : 4 byte，long long : 8 byte，128M 可以开下 33554432 个 int<br>2、看数据范围开 <code>long long</code>（<code>int</code> 最大 2147483647<br>3、<code>int * int</code> 赋值给 <code>long long</code> 的时候可能要强制转换<br>4、<a href="http://zh.cppreference.com/w/cpp/language/operator_precedence" target="_blank" rel="noopener">运算符优先级</a><br>比如加减乘除优先于左移右移（可以 <code>mid = l + r &gt;&gt; 1</code><br>比较优先于位运算（不可以 <code>if (x &amp; 1 == 0)</code><br>5、STL 从 0 开始存<br>6、计算几何考虑除以 0<br>7、浮点数精度<br>8、<code>if else</code> 和 <code>{}</code><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (x) &#123;</span><br><span class="line">	<span class="keyword">if</span> (y) f1();</span><br><span class="line">&#125; <span class="keyword">else</span> f2();</span><br></pre></td></tr></table></figure></p>
+<p>为了省括号写成了<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(x)</span><br><span class="line">	<span class="keyword">if</span> (y) f1();</span><br><span class="line"><span class="keyword">else</span> f2();</span><br></pre></td></tr></table></figure></p>
+<h1 id="操作系统-amp-编译器不兼容"><a href="#操作系统-amp-编译器不兼容" class="headerlink" title="操作系统&amp;编译器不兼容"></a>操作系统&amp;编译器不兼容</h1><p>1、没有 <code>#include &lt;cstring&gt;</code> 然后 <code>memset</code>（Win 可以编译过，Linux 会 CE<br>2、保留字，如 <code>pipe</code>、<code>time</code>（Win 可以编译过，Linux 会 CE<br>3、<code>%lld</code> 与 <code>%I64d</code></p>
+<h1 id="初学者的建议"><a href="#初学者的建议" class="headerlink" title="初学者的建议"></a>初学者的建议</h1><p>1、认真阅读题意，看清数据范围<br>2、不要轻信样例，样例一遍很水，而且不包含特殊情况。如果 WA 了就自己造数据跑。<br>3、学会计算时间复杂度，1s 大概可以跑 500,0000<br>4、学会调试，如 gdb，或 IDE 自带调试，或 输出调试<br>5、写完题可以看看别人的代码，有时候可以学到一些有趣的 tips 以及代码风格。有的 OJ 可以看代码（UOJ、LOJ、51nod、COGS、luogu 等），或者网上可以搜到很多人的题解。<br>6、参考 <a href="http://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/contents/" target="_blank" rel="noopener">Google 开源项目 C++ 风格指南</a></p>
+</section>
+	
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#编程" >
+    <span class="tag-code">编程</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+	
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/18.01.04/">
+        <span class="nav-arrow">← </span>
+        
+          2017 问题求解一 期末考试
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/18.03.14/">
+        
+          关于学术导师制度的一些问题
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+	
+	<!-- Comment Valine START -->
+    
+      <div id="comment" style="margin-top:25px;"></div>
+      <script>
+        new Valine({
+        el: '#comment' ,
+        notify: false, // 邮件提醒
+        verify: false, // 验证码
+        appId: 'zIl1N3bcpby3Wj0isWv6oOAm-MdYXbMMI',
+        appKey: 'ufcL3CIfmHs59BjxrloEyXQe',
+        placeholder: 'ヾﾉ≧∀≦)o 来啊, 快活啊!',
+        path: window.location.pathname, 
+        avatar: 'mm'
+      });
+      </script>
+    
+	<!-- Comment Valine END -->
+	
+  </article>
+  <!-- Article END -->
+  
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#智障型错误"><span class="toc-nav-text">智障型错误</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#初学型错误"><span class="toc-nav-text">初学型错误</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#老司机也会挂"><span class="toc-nav-text">老司机也会挂</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#操作系统-amp-编译器不兼容"><span class="toc-nav-text">操作系统&amp;编译器不兼容</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#初学者的建议"><span class="toc-nav-text">初学者的建议</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+  
+</main>
+
+<script>
+  (function () {
+    var url = '/18.01.18/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "算法题常见错误汇总",
+        owner: "",
+        repo: "",
+        oauth: {
+          client_id: "",
+          client_secret: ""
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+	<br>
+	Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

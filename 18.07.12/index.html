@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="problem solving">
+  <meta name="keyword" content>
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      2017 问题求解二 期末考试 | NJUCSE17
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>NJUCSE17</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>2017 问题求解二 期末考试</h2>
+  <p class="post-date">2018-07-12
+    
+	  by Fancy
+    
+  </p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p>请忽略玄学的代码高亮</p>
+<h1 id="1519-Problem-A-简单搜索"><a href="#1519-Problem-A-简单搜索" class="headerlink" title="1519 Problem A 简单搜索"></a><a href="http://114.212.10.47:8084/problem.php?cid=1039&amp;pid=0" target="_blank" rel="noopener">1519 Problem A 简单搜索</a></h1><blockquote>
+<p>输入升序排列的数组，查询某个元素的位置。（n&lt;=1e5）</p>
+</blockquote>
+<p>一个 lower_bound 或者 map 解决，但似乎老师说要手写二分。<br>　<br>听说卡 cin？</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> n, m, a[<span class="number">100000</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, x; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (x &lt;= a[mid]) r = mid;</span><br><span class="line">            <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, l);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="1079-Problem-B-Quicksort"><a href="#1079-Problem-B-Quicksort" class="headerlink" title="1079 Problem B Quicksort"></a><a href="http://114.212.10.47:8084/problem.php?cid=1039&amp;pid=1" target="_blank" rel="noopener">1079 Problem B Quicksort</a></h1><blockquote>
+<p>手写快排。（n&lt;=1e5）</p>
+</blockquote>
+<p>人生第一次手写快排，幸亏看到了提示。<br>　<br>听说有人死于不会写随机数。但这题并不需要很严格的随机数，乱搞一下应该就过了。<br>法一：调用 <code>cstdlib</code> 库中的 <code>rand()</code>。<br>法二：调用 <code>algorithm</code> 库中的 <code>std::random_shuffle()</code> 直接打乱原数组。<br>法三：随便找个数列 $r_i = (a\times r_{i-1} + b)\bmod p$ 作为随机数。<br>法四：把数列中的左端点、中间点、三分点之类的作为 pivot。<br>注：前两个需要 <code>std::srand(time(NULL))</code>。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> n, a[<span class="number">100005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QuickSort</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> x = rand() % (r - l + <span class="number">1</span>) + l, mid = l;</span><br><span class="line">    <span class="built_in">std</span>::swap(a[x], a[r]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = l, x = a[r]; i &lt; r; ++i)</span><br><span class="line">        <span class="keyword">if</span>(a[i] &lt; x) <span class="built_in">std</span>::swap(a[i], a[mid++]);</span><br><span class="line">    <span class="built_in">std</span>::swap(a[mid], a[r]);</span><br><span class="line"></span><br><span class="line">    QuickSort(l, mid - <span class="number">1</span>);</span><br><span class="line">    QuickSort(mid + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::srand(time(<span class="literal">NULL</span>));</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n) != EOF) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">        QuickSort(<span class="number">1</span>, n);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d%c"</span>, a[i], i &lt; n ? <span class="string">' '</span> : <span class="string">'\n'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="1520-Problem-C-二叉树计数"><a href="#1520-Problem-C-二叉树计数" class="headerlink" title="1520 Problem C 二叉树计数"></a><a href="http://114.212.10.47:8084/problem.php?cid=1039&amp;pid=2" target="_blank" rel="noopener">1520 Problem C 二叉树计数</a></h1><blockquote>
+<p>递归计算二叉树每个结点的子树结点个数。</p>
+</blockquote>
+<p>树边不是 n-1 条吗 hhhhh</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1000005</span>;</span><br><span class="line"><span class="keyword">int</span> n, size[N], ch[N][<span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Dfs</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    size[x] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (ch[x][<span class="number">0</span>]) size[x] += Dfs(ch[x][<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">if</span> (ch[x][<span class="number">1</span>]) size[x] += Dfs(ch[x][<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">return</span> size[x];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">int</span> x, y;</span><br><span class="line">    <span class="keyword">char</span> opt[<span class="number">5</span>];</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x == <span class="number">-1</span>) <span class="keyword">break</span>;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s%d"</span>, opt, &amp;y);</span><br><span class="line">        ch[x + <span class="number">1</span>][opt[<span class="number">0</span>] == <span class="string">'R'</span>] = y + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Dfs(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d : %d\n"</span>, i - <span class="number">1</span>, size[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="1214-Problem-D-Red-Black-Tree-2"><a href="#1214-Problem-D-Red-Black-Tree-2" class="headerlink" title="1214 Problem D Red-Black Tree-2"></a><a href="http://114.212.10.47:8084/problem.php?cid=1039&amp;pid=3" target="_blank" rel="noopener">1214 Problem D Red-Black Tree-2</a></h1><blockquote>
+<p>手写红黑树的插入。</p>
+</blockquote>
+<p>伪代码够良心。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    node *p, *ch[<span class="number">2</span>];</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">string</span> s;</span><br><span class="line">    <span class="keyword">int</span> col;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">flag</span><span class="params">()</span> </span>&#123;<span class="keyword">return</span> p-&gt;ch[<span class="number">1</span>] == <span class="keyword">this</span>;&#125;</span><br><span class="line">    node(node *, <span class="built_in">std</span>::<span class="built_in">string</span>, <span class="keyword">int</span>);</span><br><span class="line">&#125; *root, *null;</span><br><span class="line">node::node(node *p, <span class="built_in">std</span>::<span class="built_in">string</span> s, <span class="keyword">int</span> c) : p(p), s(s), col(c) &#123;ch[<span class="number">0</span>] = ch[<span class="number">1</span>] = null;&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Rotate</span><span class="params">(node *y)</span> </span>&#123;</span><br><span class="line">    node *x = y-&gt;p;</span><br><span class="line">    <span class="keyword">int</span> f = !y-&gt;flag();</span><br><span class="line">    <span class="keyword">if</span> (x == root) (root = y)-&gt;p = null;</span><br><span class="line">    <span class="keyword">else</span> (x-&gt;p-&gt;ch[x-&gt;flag()] = y)-&gt;p = x-&gt;p;</span><br><span class="line">    (x-&gt;ch[!f] = y-&gt;ch[f])-&gt;p = x;</span><br><span class="line">    (y-&gt;ch[f] = x)-&gt;p = y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">FixUp</span><span class="params">(node *x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (; !x-&gt;p-&gt;col; x = x-&gt;p-&gt;p) &#123;</span><br><span class="line">        <span class="keyword">int</span> f = x-&gt;p-&gt;flag();</span><br><span class="line">        <span class="keyword">if</span> (!x-&gt;p-&gt;p-&gt;ch[!f]-&gt;col) &#123;</span><br><span class="line">            x-&gt;p-&gt;col ^= <span class="number">1</span>;</span><br><span class="line">            x-&gt;p-&gt;p-&gt;col ^= <span class="number">1</span>;</span><br><span class="line">            x-&gt;p-&gt;p-&gt;ch[!f]-&gt;col ^= <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (x-&gt;flag() != f) Rotate(x);</span><br><span class="line">            <span class="keyword">else</span> x = x-&gt;p;</span><br><span class="line">            x-&gt;col ^= <span class="number">1</span>;</span><br><span class="line">            x-&gt;p-&gt;col ^= <span class="number">1</span>;</span><br><span class="line">            Rotate(x);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    root-&gt;col = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Insert</span><span class="params">(node *&amp;x, node *p, <span class="built_in">std</span>::<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x == null) FixUp(x = <span class="keyword">new</span> node(p, s, <span class="number">0</span>));</span><br><span class="line">    <span class="keyword">else</span> Insert(x-&gt;ch[s &gt;= x-&gt;s], x, s);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Inorder</span><span class="params">(node *x)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; x-&gt;s &lt;&lt; (x-&gt;col ? <span class="string">":black"</span> : <span class="string">":red"</span>) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">if</span> (x-&gt;ch[<span class="number">0</span>] != null) Inorder(x-&gt;ch[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">if</span> (x-&gt;ch[<span class="number">1</span>] != null) Inorder(x-&gt;ch[<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Find</span><span class="params">(node *x, <span class="built_in">std</span>::<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s == x-&gt;s || x == null) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> Find(x-&gt;ch[s &gt;= x-&gt;s], s) + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    root = null = <span class="keyword">new</span> node(<span class="number">0</span>, <span class="built_in">std</span>::<span class="built_in">string</span>(<span class="string">""</span>), <span class="number">1</span>);</span><br><span class="line">    null-&gt;p = null-&gt;ch[<span class="number">0</span>] = null-&gt;ch[<span class="number">1</span>] = null;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">std</span>::<span class="built_in">string</span> s; n; --n)</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; s, Insert(root, null, s);</span><br><span class="line">    Inorder(root);</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">std</span>::<span class="built_in">string</span> s; m; --m)</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; s, <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; Find(root, s) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></section>
+	
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#编程" >
+    <span class="tag-code">编程</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+	
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/18.06.23/">
+        <span class="nav-arrow">← </span>
+        
+          全日制本科学生发展测评表测评细则
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/18.09.02/">
+        
+          9月班会活动选项
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+	
+	<!-- Comment Valine START -->
+    
+      <div id="comment" style="margin-top:25px;"></div>
+      <script>
+        new Valine({
+        el: '#comment' ,
+        notify: false, // 邮件提醒
+        verify: false, // 验证码
+        appId: 'zIl1N3bcpby3Wj0isWv6oOAm-MdYXbMMI',
+        appKey: 'ufcL3CIfmHs59BjxrloEyXQe',
+        placeholder: 'ヾﾉ≧∀≦)o 来啊, 快活啊!',
+        path: window.location.pathname, 
+        avatar: 'mm'
+      });
+      </script>
+    
+	<!-- Comment Valine END -->
+	
+  </article>
+  <!-- Article END -->
+  
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#1519-Problem-A-简单搜索"><span class="toc-nav-text">1519 Problem A 简单搜索</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#1079-Problem-B-Quicksort"><span class="toc-nav-text">1079 Problem B Quicksort</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#1520-Problem-C-二叉树计数"><span class="toc-nav-text">1520 Problem C 二叉树计数</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#1214-Problem-D-Red-Black-Tree-2"><span class="toc-nav-text">1214 Problem D Red-Black Tree-2</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+  
+</main>
+
+<script>
+  (function () {
+    var url = '/18.07.12/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "2017 问题求解二 期末考试",
+        owner: "",
+        repo: "",
+        oauth: {
+          client_id: "",
+          client_secret: ""
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+	<br>
+	Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
